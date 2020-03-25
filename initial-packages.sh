@@ -10,7 +10,7 @@ if [[ $(cat /etc/*release | grep DISTRIB_ID=) = 'DISTRIB_ID=Ubuntu' ]]; then
 
 
     echo "Installing packages in repositories"
-    sudo apt install zfsutils-linux openssh-server curl wget qemu-system qemu-utils libvirt-client cockpit cockpit-docker cockpit-packagekit cockpit-machines python3 python3-pip samba nfs-common
+    sudo apt install zfsutils-linux openssh-server curl wget qemu-system qemu-utils libvirt-clients cockpit cockpit-docker cockpit-packagekit cockpit-machines python3 python3-pip samba nfs-common
 
     echo "Done!"
 
