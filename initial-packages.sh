@@ -10,17 +10,7 @@ if [[ $(cat /etc/*release | grep DISTRIB_ID=) = 'DISTRIB_ID=Ubuntu' ]]; then
 
 
     echo "Installing packages in repositories"
-    sudo apt install \
-    # Basics
-    zfsutils-linux openssh-server curl wget \
-    # Virtual Machines
-    qemu-system qemu-utils libvirt-client \
-    # Cockpit & its extensions
-    cockpit cockpit-docker cockpit-packagekit cockpit-machines \
-    # Python
-    python3 python3-pip \
-    # File Sharing
-    samba nfs-common
+    sudo apt install zfsutils-linux openssh-server curl wget qemu-system qemu-utils libvirt-client cockpit cockpit-docker cockpit-packagekit cockpit-machines python3 python3-pip samba nfs-common
 
     echo "Done!"
 
@@ -29,19 +19,11 @@ if [[ $(cat /etc/*release | grep DISTRIB_ID=) = 'DISTRIB_ID=Ubuntu' ]]; then
     # Remove old versions
     sudo apt-get remove docker docker-engine docker.io containerd runc
     # Repo over HTTPS
-    sudo apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg-agent \
-    software-properties-common
+    sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
     # Docker Repo GPG Key
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
     # Add Repository
-    sudo add-apt-repository \
-    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-    $(lsb_release -cs) \
-    stable"
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
     # Update Package Index
     sudo apt update
     # Install Docker
