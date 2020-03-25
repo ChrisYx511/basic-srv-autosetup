@@ -17,7 +17,7 @@ POOLNAME=
 read -p 'Have you filled out the User Defined Variables? [y/n]: ' uservarprompt
 read -p "WARNING! ALL DATA ON TARGET DISKS WILL BE WIPED, ARE YOU SURE YOU WANT TO PROCEED? [y/n]: " uservarprompt
 
-if [[ $uservarprompt = 'y' ]] then
+if [[ $uservarprompt = 'y' ]]; then
     ## Load ZFS module on startup
     sudo touch /etc/modules-load.d/zfs.conf
     sudo echo zfs > /etc/modules-load.d/zfs.conf

@@ -5,7 +5,7 @@
 #  on Ubuntu (Server)
 
 echo "Run as a Standard User!"
-if [[ $(cat /etc/*release | grep DISTRIB_ID=) = 'DISTRIB_ID=Ubuntu' ]] then
+if [[ $(cat /etc/*release | grep DISTRIB_ID=) = 'DISTRIB_ID=Ubuntu' ]]; then
 
 
 

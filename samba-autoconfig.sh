@@ -7,7 +7,7 @@ POOLNAME=
 ## END USER DEFINED VARIABLES
 
 read -p 'Have you filled out the User Defined Variables? [y/n]: ' uservarprompt
-if [[ $uservarprompt = 'y' ]] then
+if [[ $uservarprompt = 'y' ]]; then
     echo "Copying new smb configuration"
 
     # Backup old config
