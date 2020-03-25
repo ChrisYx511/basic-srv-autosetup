@@ -82,7 +82,7 @@ if [[ $uservarprompt = 'y' ]]; then
     sudo systemctl enable --now zfs-scrub@"$POOLNAME".timer
     echo "Creating Datasets"
     sudo zfs create "$POOLNAME"/userdata
-    
+    sudo zfs create "$POOLNAME"/appdata
     echo "Done!"
 
 
