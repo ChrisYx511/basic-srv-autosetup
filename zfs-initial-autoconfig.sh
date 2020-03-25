@@ -22,7 +22,7 @@ if [[ $uservarprompt = 'y' ]]; then
     sudo touch /etc/modules-load.d/zfs.conf
     sudo echo zfs > /etc/modules-load.d/zfs.conf
     ## Load ZFS module
-    modprobe zfs
+    sudo modprobe zfs
     ## Stuff
     sudo systemctl enable --now zfs-import-cache
     sudo systemctl enable --now zfs-import.target
@@ -81,8 +81,7 @@ if [[ $uservarprompt = 'y' ]]; then
     sudo cp ./etc/zfs-scrub@.timer /etc/systemd/system/zfs-scrub@.timer
     sudo systemctl enable --now zfs-scrub@"$POOLNAME".timer
     echo "Creating Datasets"
-    zfs create "$POOLNAME"/appdata
-    zfs create "$POOLNAME"/userdata
+    sudo zfs create "$POOLNAME"/userdata
     
     echo "Done!"
 
