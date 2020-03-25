@@ -24,10 +24,10 @@ if [[ $uservarprompt = 'y' ]]; then
     ## Load ZFS module
     sudo modprobe zfs
     ## Stuff
-    sudo systemctl disable --now zfs-import-cache
-    sudo systemctl disable --now zfs-import.target
-    sudo systemctl disable --now zfs-mount
-    sudo systemctl disable --now zfs.target
+    sudo systemctl enable --now zfs-import-cache
+    sudo systemctl enable --now zfs-import.target
+    sudo systemctl enable --now zfs-mount
+    sudo systemctl enable --now zfs.target
 
     ## Create zpool and determining ashift value
     echo "Creating pool..."
