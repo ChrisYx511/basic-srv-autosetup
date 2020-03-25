@@ -55,5 +55,3 @@ else
     echo "Unsupoorted Distro! Exiting..."
     exit
 fi
-
-

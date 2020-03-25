@@ -7,20 +7,25 @@ POOLNAME=
 ## END USER DEFINED VARIABLES
 
 read -p 'Have you filled out the User Defined Variables? [y/n]: ' uservarprompt
+if [[ $uservarprompt = 'y' ]] then
+    echo "Copying new smb configuration"
 
-echo "Copying new smb configuration"
+    # Backup old config
+    sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bak1
 
-# Backup old config
-sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bak1
+    # Installing new config
 
-# Installing new config
+    sudo cp ./etc/smb.conf /etc/samba/smb.conf
 
-sudo cp ./etc/smb.conf /etc/samba/smb.conf
+    echo "Configuring ZFS"
+    # All user r/w access on pool
+    sudo chmod -R 777 /$POOLNAME
 
-echo "Configuring ZFS"
-# All user r/w access on pool
-sudo chmod -R 777 /$POOLNAME
+    sudo zfs set sharesmb=on "$POOLNAME"
 
-sudo zfs set sharesmb=on "$POOLNAME"
+    echo "Done!"
 
-echo "Done!"
+else 
+    echo "Exiting..."
+    exit
+fi
