@@ -70,7 +70,7 @@ if [[ $uservarprompt = 'y' ]]; then
 
     echo "Configuring pool..."
     # Setting important ZFS flags
-    sudo zfs set sync=always "$POOLNAME" 
+    # sudo zfs set sync=always "$POOLNAME" 
     sudo zfs set compression=lz4 "$POOLNAME"
     sudo zfs set atime=on "$POOLNAME"
     sudo zfs set relatime=on "$POOLNAME"
