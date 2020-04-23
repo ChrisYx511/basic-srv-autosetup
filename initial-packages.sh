@@ -12,7 +12,7 @@ if [[ $(cat /etc/*release | grep DISTRIB_ID=) = 'DISTRIB_ID=Ubuntu' ]]; then
     echo "Installing Upgrades"
     sudo apt update && sudo apt upgrade -y
     echo "Installing packages in repositories"
-    sudo apt install -y zfsutils-linux openssh-server curl wget qemu-system qemu-utils ovmf libvirt-clients libvirt-daemon libvirt-bin virt-manager networkmanager cockpit cockpit-networkmanager cockpit-docker cockpit-packagekit cockpit-machines python3 python3-pip samba nfs-common
+    sudo apt install -y zfsutils-linux openssh-server curl wget qemu-system qemu-utils ovmf libvirt-clients libvirt-daemon libvirt-bin virt-manager network-manager cockpit cockpit-networkmanager cockpit-docker cockpit-packagekit cockpit-machines python3 python3-pip samba nfs-common
 
     echo "Done!"
 
