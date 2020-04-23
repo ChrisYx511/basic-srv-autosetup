@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ## Configuring main ZFS pool with right / recommended settings, pool in RAIDZ1, 1 SLOG, 1 L2ARC and 3 disks
+## THIS ONLY WORKS FOR THE STOCK KERNEL, AS IT DOESN'T CONFIGURE ZFS DKMS 
 
 ## USER DEFINED VARIABLES
 # Fill these out with the correct disk by-id or UUIDs (FULL PATH REQUIRED /dev/by-id or /dev/by-uuid)

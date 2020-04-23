@@ -3,6 +3,7 @@
 ## Downloading Initial Packages for basic server setup
 #  with ZFS and Cockpit projetct, shared on SMB with v1 disabled, VMs installed
 #  on Ubuntu (Server)
+## THIS ONLY WORKS FOR THE STOCK KERNEL, AS IT DOESN'T CONFIGURE ZFS DKMS 
 
 echo "Run as a Standard User!"
 if [[ $(cat /etc/*release | grep DISTRIB_ID=) = 'DISTRIB_ID=Ubuntu' ]]; then
@@ -11,7 +12,7 @@ if [[ $(cat /etc/*release | grep DISTRIB_ID=) = 'DISTRIB_ID=Ubuntu' ]]; then
     echo "Installing Upgrades"
     sudo apt update && sudo apt upgrade -y
     echo "Installing packages in repositories"
-    sudo apt install -y zfsutils-linux openssh-server curl wget qemu-system qemu-utils libvirt-clients cockpit cockpit-docker cockpit-packagekit cockpit-machines python3 python3-pip samba nfs-common
+    sudo apt install -y zfsutils-linux openssh-server curl wget qemu-system qemu-utils ovmf libvirt-clients libvirt-daemon libvirt-bin virt-manager networkmanager cockpit cockpit-networkmanager cockpit-docker cockpit-packagekit cockpit-machines python3 python3-pip samba nfs-common
 
     echo "Done!"
 
